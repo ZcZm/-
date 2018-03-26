@@ -1,0 +1,44 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑老师信息</title>
+    <link rel="stylesheet" href="/Grade_Serching_System/Public/css/manager_teaedit.css" />
+</head>
+<body>
+    <div class="pd-20">
+  <div class="Huiform">
+    <form action="<?php echo U('Admin/change/save');?>" method="post" name="myform" id="editform" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="<?php echo ($_SESSION['userinfo']['id']); ?>">
+      <input type="hidden" value="<?php echo ($admin_info['id']); ?>" name='id'>
+      <table class="table table-bg">
+        <tbody>
+        <tr>
+          <th class="text-r">原始密码：</th>
+          <td>  <input type="password" class="input-text" name="old_admin_password" placeholder="请输入原始密码" datatype="*1-16" nullmsg="请输入原始密码！" errormsg="密码范围在1~16位之间！"/>
+            <span class="Validform_checktip"></span></td>
+        </tr>
+        <tr>
+          <th class="text-r">新密码：</th>
+          <td> <input type="password" class="input-text" name="admin_password" placeholder="密码为1-16位字符串" datatype="*3-16"  nullmsg="请设置密码！" errormsg="密码范围在1~16位之间！"/>
+            <span class="Validform_checktip"></span></td>
+        </tr>
+        <tr>
+          <th class="text-r">确认密码：</th>
+          <td> <input type="password" name="re_admin_repassword" class="input-text" placeholder="再次输入密码" datatype="*" ignore="ignore" recheck="admin_password" nullmsg="请再输入一次密码！" errormsg="您两次输入的账号密码不一致！" />
+            <span class="Validform_checktip"></span></td>
+        </tr>
+        <tr>
+          <th></th>
+          <td><button class="btn btn-success radius" type="submit"><i class="icon-ok"></i> 确定</button>&nbsp;&nbsp;<a href="/Grade_Serching_System/index.php/Admin/<?php echo ($_SESSION['userinfo']['status']); ?>/index" class="btn btn-success radius"><i class="icon-ok"></i> 返回</a></td>
+        </tr>
+        </tbody>
+      </table>
+    </form>
+  </div>
+</div>
+</body>
+<script type="text/javascript" src="/Grade_Serching_System/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="/Grade_Serching_System/Public/js/Validform_v5.3.2_min.js"></script>
+<script type="text/javascript" src="/Grade_Serching_System/Public/js/H-ui.js"></script>
+</html>

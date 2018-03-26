@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>教师首页</title>
+    <link rel="stylesheet" href="__PUBLIC__/css/teacher_index.css" />
+</head>
+
+<body class="all">
+
+	<div class="A">
+		<div class="link"><a href="__CONTROLLER__/add.html">添加课程</a></div>
+		<div class="link"><a href="__CONTROLLER__/coulist.html/">管理课程</a></div>
+		<div class="link"><a href="__MODULE__/change/index">修改密码</a></div>
+		<div class="link"><a href="__MODULE__/Index/logout">退出登录</a></div>
+	</div>
+	<div class="B"></div>
+	<div class="title">教师基本信息</div>
+	<table cellspacing="0" class="table">
+		<tr>
+			<td class="td1">工号</td>
+			<td class="td2">{$data.teano}</td>
+			<td class="td1">姓名</td>
+			<td class="td2">{$data.teaname}</td>
+		</tr>
+		<tr>
+			<td class="td1">班级编号</td>
+			<td class="td2">{$data.classno}</td>
+			<td class="td1">班级名称</td>
+			<td class="td2">{$data.classname}</td>
+		</tr>
+		<tr>
+			<td class="td1">初始密码</td>
+			<td class="td2">{$data.pwd}</td>
+			<td class="td1">性别</td>
+			<td class="td2">{$data.sex}</td>
+		</tr>
+		<tr>
+			<td class="td1">简介</td>
+			<td class="td2" colspan="3">{$data.introduction}</td>
+		</tr>
+	</table>
+	<form method="post" action="__MODULE__/Teacher/teaedit/">
+		<div class="submit">
+			<input type="submit" value="编辑" class="button"/>
+		</div>
+	</form>
+</body>
+</html>
